@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 exports.handler = async (event, context) => {
-  const password = "yourpassword"; // Set your password here
+  const password = "EcoGrow2024"; // Set your password here
   const authHeader = event.headers.authorization;
 
   if (!authHeader) {
