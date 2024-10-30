@@ -1,3 +1,6 @@
+const fs = require('fs');
+const path = require('path');
+
 exports.handler = async (event, context) => {
   const password = "EcoGrow2024"; // Set your password here
   const authHeader = event.headers.authorization;
@@ -23,8 +26,21 @@ exports.handler = async (event, context) => {
     };
   }
 
-  return {
-    statusCode: 200,
-    body: "Authorized",
-  };
+  const filePath = path.join(__dirname, '../..', event.path === '/' ? '/index.html' : event.path);
+  
+  try {
+    const fileContents = fs.readFileSync(filePath, 'utf8');
+    return {
+      statusCode: 200,
+      body: fileContents,
+      headers: {
+        'Content-Type': 'text/html',
+      },
+    };
+  } catch (error) {
+    return {
+      statusCode: 404,
+      body: 'File not found',
+    };
+  }
 };
