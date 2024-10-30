@@ -6,3 +6,4 @@
   to = "/.netlify/functions/password-protect"
   status = 200
   force = true
+

@@ -37,10 +37,4 @@ exports.handler = async (event, context) => {
         'Content-Type': 'text/html',
       },
     };
-  } catch (error) {
-    return {
-      statusCode: 404,
-      body: 'File not found',
-    };
   }
-};
