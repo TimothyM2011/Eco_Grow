@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 exports.handler = async (event, context) => {
-  const password = "EcoGrow2024"; // Set your password here
+  const password = "yourpassword"; // Set your password here
   const authHeader = event.headers.authorization;
 
   console.log("Authorization Header:", authHeader); // Debugging line
@@ -38,5 +38,17 @@ exports.handler = async (event, context) => {
   try {
     const fileContents = fs.readFileSync(filePath, 'utf8');
     return {
-      st
-
+      statusCode: 200,
+      body: fileContents,
+      headers: {
+        'Content-Type': 'text/html',
+      },
+    };
+  } catch (error) {
+    console.error("File Read Error:", error); // Debugging line
+    return {
+      statusCode: 404,
+      body: 'File not found',
+    };
+  }
+};
