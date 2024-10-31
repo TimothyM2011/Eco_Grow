@@ -6,7 +6,13 @@
     <title>EcoGrow Systems - Home</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+    <script>
+        if (sessionStorage.getItem('authenticated') !== 'true') {
+            window.location.href = 'password.html';
+        }
+    </script>
     <header>
         <h1>EcoGrow Systems</h1>
         <nav>
