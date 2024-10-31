@@ -2,8 +2,10 @@ const fs = require('fs');
 const path = require('path');
 
 exports.handler = async (event, context) => {
-  const password = "yourpassword"; // Set your password here
+  const password = "EcoGrow2024"; // Set your password here
   const authHeader = event.headers.authorization;
+
+  console.log("Authorization Header:", authHeader); // Debugging line
 
   if (!authHeader) {
     return {
@@ -19,6 +21,8 @@ exports.handler = async (event, context) => {
   const credentials = Buffer.from(base64Credentials, "base64").toString("ascii");
   const [username, enteredPassword] = credentials.split(":");
 
+  console.log("Entered Password:", enteredPassword); // Debugging line
+
   if (enteredPassword !== password) {
     return {
       statusCode: 403,
@@ -27,6 +31,8 @@ exports.handler = async (event, context) => {
   }
 
   const filePath = path.join(__dirname, '../..', event.path === '/' ? 'index.html' : event.path);
+  
+  console.log("File Path:", filePath); // Debugging line
 
   try {
     const fileContents = fs.readFileSync(filePath, 'utf8');
@@ -38,6 +44,7 @@ exports.handler = async (event, context) => {
       },
     };
   } catch (error) {
+    console.error("File Read Error:", error); // Debugging line
     return {
       statusCode: 404,
       body: 'File not found',
