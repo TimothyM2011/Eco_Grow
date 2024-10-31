@@ -30,24 +30,13 @@ exports.handler = async (event, context) => {
     };
   }
 
-  const filePath = path.join(__dirname, '../..', event.path === '/' ? 'index.html' : event.path);
-  
+  const publicPath = path.join(__dirname, '../..', 'public'); // Adjust this if your files are in a different location
+  const filePath = path.join(publicPath, event.path === '/' ? 'index.html' : event.path);
+
   console.log("File Path:", filePath); // Debugging line
 
   try {
     const fileContents = fs.readFileSync(filePath, 'utf8');
     return {
-      statusCode: 200,
-      body: fileContents,
-      headers: {
-        'Content-Type': 'text/html',
-      },
-    };
-  } catch (error) {
-    console.error("File Read Error:", error); // Debugging line
-    return {
-      statusCode: 404,
-      body: 'File not found',
-    };
-  }
-};
+      st
+
