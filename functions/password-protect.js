@@ -1,10 +1,8 @@
-// functions/password-protect.js
-
 const fs = require('fs');
 const path = require('path');
 
-exports.handler = async (event) => {
-  const password = "EcoGrow2024"; // Set your password here
+exports.handler = async (event, context) => {
+  const password = "yourpassword"; // Set your password here
   const authHeader = event.headers.authorization;
 
   if (!authHeader) {
@@ -28,8 +26,8 @@ exports.handler = async (event) => {
     };
   }
 
-  const filePath = path.join(__dirname, '../', event.path === '/' ? 'index.html' : event.path);
-  
+  const filePath = path.join(__dirname, '../..', event.path === '/' ? 'index.html' : event.path);
+
   try {
     const fileContents = fs.readFileSync(filePath, 'utf8');
     return {
