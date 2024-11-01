@@ -3,6 +3,6 @@
 
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "/login.html"
   status = 200
   force = true
