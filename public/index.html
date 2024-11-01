@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,7 +8,7 @@
 </head>
 <body>
     <script>
-        if (sessionStorage.getItem('authenticated') == 'true') {
+        if (sessionStorage.getItem('authenticated') !== 'true') {
             window.location.href = 'password.html';
         }
     </script>
