@@ -1,16 +1,20 @@
-<!D<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcoGrow Systems - Home</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
     <script>
-        if (sessionStorage.getItem('authenticated') !== 'true') {
-            window.location.href = 'password.html';
-        }
+        netlifyIdentity.on('init', user => {
+            if (!user) {
+                window.location.href = 'login.html';
+            }
+        });
+        netlifyIdentity.init();
     </script>
     <header>
         <h1>Welcome to EcoGrow Systems</h1>
@@ -42,4 +46,3 @@
     </footer>
 </body>
 </html>
-
