@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!D<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="styles.css">
     <script>
         window.onload = function() {
-            // Ensure referrer is from login.html
-            const referrer = document.referrer;
-            if (!referrer.includes('login.html')) {
+            // Ensure user is authenticated
+            const authenticated = sessionStorage.getItem('authenticated');
+            if (authenticated !== 'true') {
                 window.location.href = 'login.html';
             }
         }
