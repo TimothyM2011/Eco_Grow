@@ -1,5 +1,5 @@
 [[redirects]]
   from = "/*"
-  to = "/login.html"
+  to = "/public/login.html"
   status = 200
   force = true
