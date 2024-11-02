@@ -1,4 +1,4 @@
-<!D<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,10 +6,20 @@
     <title>EcoGrow Systems - Home</title>
     <link rel="stylesheet" href="styles.css">
     <script>
+        function getCookie(name) {
+            let nameEQ = name + "=";
+            let ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
         window.onload = function() {
             // Ensure user is authenticated
-            const authenticated = sessionStorage.getItem('authenticated');
-            if (authenticated !== 'true') {
+            if (getCookie('authenticated') !== 'true') {
                 window.location.href = 'login.html';
             }
         }

@@ -1,0 +1,12 @@
+[[redirects]]
+  from = "/index.html"
+  to = "/login.html"
+  status = 302
+  conditions = { cookie = ["authenticated=false"] }
+
+[[redirects]]
+  from = "/*"
+  to = "/login.html"
+  status = 200
+  force = false
+  conditions = { cookie = ["authenticated=false"] }
