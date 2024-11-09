@@ -1,5 +1,0 @@
-[[redirects]]
-  from = "/*"
-  to = "/public/login.html"
-  status = 200
-  force = true
