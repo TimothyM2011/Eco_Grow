@@ -5,25 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcoGrow Systems - Home</title>
     <link rel="stylesheet" href="styles.css">
-    <script>
-        function getCookie(name) {
-            let nameEQ = name + "=";
-            let ca = document.cookie.split(';');
-            for (let i = 0; i < ca.length; i++) {
-                let c = ca[i];
-                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-            }
-            return null;
-        }
-
-        window.onload = function() {
-            // Ensure user is authenticated
-            if (getCookie('authenticated') !== 'true') {
-                window.location.href = 'login.html';
-            }
-        }
-    </script>
 </head>
 <body>
     <header>
