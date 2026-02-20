@@ -8,7 +8,13 @@
 </head>
 <body>
     <header>
-        <h1>Go-to-Market Strategy</h1>
+        <div class="header-top">
+            <div class="header-title-group">
+                <img src="images/logo.png" alt="EcoGrow Logo" class="header-logo">
+                <h1>Go-to-Market Strategy</h1>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+        </div>
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -17,6 +23,7 @@
             <a href="app.html">EcoGrow App</a>
             <a href="implementation.html">Implementation</a>
             <a href="cost.html">Cost Analysis</a>
+            <a href="strategy.html" class="active">Go-to-Market</a>
             <a href="usp.html">USP</a>
             <a href="conclusion.html">Conclusion</a>
             <a href="https://forms.gle/YrAyy2YwQXZtVoLy5">Feedback</a>
@@ -26,13 +33,18 @@
     <main>
         <section>
             <h2>Market Entry Strategy</h2>
-            <p>EcoGrow Systems will partner with local agricultural agencies and distributors to introduce our solutions. Our goal is to create awareness and offer practical demonstrations to highlight the product’s value.</p>
+            <p>EcoGrow Systems will partner with local agricultural agencies and distributors to introduce our solutions. Our goal is to create awareness and offer practical demonstrations to highlight the product's value.</p>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 EcoGrow Systems</p>
         <img src="images/logo.png" alt="EcoGrow Logo" class="footer-logo">
+        <p>&copy; 2026 EcoGrow Systems</p>
     </footer>
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('open');
+        });
+    </script>
 </body>
 </html>
