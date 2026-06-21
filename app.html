@@ -8,12 +8,19 @@
 </head>
 <body>
     <header>
-        <h1>EcoGrow App</h1>
+        <div class="header-top">
+            <div class="header-title-group">
+                <img src="images/logo.png" alt="EcoGrow Logo" class="header-logo">
+                <h1>EcoGrow App</h1>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+        </div>
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="solution.html">Solution</a>
             <a href="soil-analysis.html">Soil Analysis</a>
+            <a href="app.html" class="active">EcoGrow App</a>
             <a href="implementation.html">Implementation</a>
             <a href="cost.html">Cost Analysis</a>
             <a href="strategy.html">Go-to-Market</a>
@@ -32,8 +39,13 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 EcoGrow Systems</p>
         <img src="images/logo.png" alt="EcoGrow Logo" class="footer-logo">
+        <p>&copy; 2026 EcoGrow Systems</p>
     </footer>
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('open');
+        });
+    </script>
 </body>
 </html>
